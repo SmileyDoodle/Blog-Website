@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+
+<h1>Home</h1>
+
+<p> <%= homeStartingContent %>  </p>
+
+<div>
+    <% function truncate(str, n){ %>
+    <% return (str.length > n) ? str.substr(0, n-1) + ' ...' : str;}; %>
+    <% posts.forEach(function(post) { %>
+        <h1> <%= post.title; %> </h1>
+        <p> <%= truncate(post.post, 100) %> <a href="/post/<%= post.title %>">Read more</a> </p>
+    <% }); %>
+</div>
+
+
+<%- include('partials/footer'); -%>
+
+
+
+<!-- Array.prototype.forEach alternative (!EJS needs to be fixed!)
+< for (var i = 0; i < posts.length; i++) { %>
+    <p> < (posts[i]).title %> </p>
+    <p> < (posts[i]).post %> </p>
+< }; %> -->
