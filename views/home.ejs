@@ -8,8 +8,8 @@
     <% function truncate(str, n){ %>
     <% return (str.length > n) ? str.substr(0, n-1) + ' ...' : str;}; %>
     <% posts.forEach(function(post) { %>
-        <h1> <%= post.title; %> </h1>
-        <p> <%= truncate(post.post, 100) %> <a href="/post/<%= post.title %>">Read more</a> </p>
+        <h1> <%= post.name; %> </h1>
+        <p> <%= truncate(post.post, 100) %> <a href="/blog/<%= post._id %>">Read more</a> </p>
     <% }); %>
 </div>
 
